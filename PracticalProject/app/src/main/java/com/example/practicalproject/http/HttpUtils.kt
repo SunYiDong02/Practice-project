@@ -3,6 +3,7 @@ package com.example.practicalproject.http
 import com.example.practicalproject.base.Constants.BASE_URL
 import com.example.practicalproject.base.Constants.BASE_URL_TEST
 import com.orhanobut.logger.Logger
+import io.reactivex.Observable
 import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
@@ -19,7 +20,7 @@ import java.util.concurrent.TimeUnit
  * @description
  * @author Created by SunYiDong on 2021/7/16 11:43.
  */
-class HttpUtils {
+ class HttpUtils {
     private var mOkhttp: OkHttpClient? = null
     private fun isTest(isTest: Boolean): String = if (isTest) BASE_URL_TEST else BASE_URL
     fun <T> createApi(clazz: Class<T>): T = Retrofit.Builder()
@@ -48,7 +49,7 @@ class HttpUtils {
         return HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
     }
 
-    fun <T> sendHttp(ob: io.reactivex.Observable<T>, listenter: ResponseListenter<T>) {
+     fun <T> sendHttp(ob: Observable<T>, listenter: ResponseListenter<T>) {
         ob.subscribeOn(Schedulers.io())
             .subscribeOn(AndroidSchedulers.mainThread())
             .observeOn(AndroidSchedulers.mainThread())
@@ -57,10 +58,11 @@ class HttpUtils {
                 }
 
                 override fun onNext(t: T) {
-                listenter!!.onSuccess(t)
+                    listenter!!.onSuccess(t)
                 }
 
                 override fun onError(e: Throwable) {
+                    listenter!!.onFail(e.message.toString())
                 }
 
                 override fun onComplete() {
