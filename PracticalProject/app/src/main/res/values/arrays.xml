@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="title">
+        <item>首页</item>
+        <item>西瓜视频</item>
+        <item>小视频</item>
+        <item>我的</item>
+    </string-array>
+    <integer-array name="unSelect">
+        <item>@drawable/ic_action_name</item>
+        <item>@drawable/ic_action_video</item>
+        <item>@drawable/ic_action_play</item>
+        <item>@drawable/ic_action_me</item>
+    </integer-array>
+    <integer-array name="select">
+        <item>@drawable/ic_action_name_light</item>
+        <item>@drawable/ic_action_video_light</item>
+        <item>@drawable/ic_action_play_light</item>
+        <item>@drawable/ic_action_me_light</item>
+    </integer-array>
+</resources>
