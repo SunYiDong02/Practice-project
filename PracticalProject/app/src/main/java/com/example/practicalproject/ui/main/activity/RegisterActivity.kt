@@ -14,9 +14,7 @@ class RegisterActivity : BaseActivity<RegisterView, RegisterPersenter>(), Regist
     override fun initView() {
     }
 
-    override fun createPersenter(): RegisterPersenter {
-        TODO("Not yet implemented")
-    }
+
 
     override fun <T> setData(data: T) {
 
@@ -24,5 +22,7 @@ class RegisterActivity : BaseActivity<RegisterView, RegisterPersenter>(), Regist
 
     override fun setError(error: String) {
     }
+
+    override fun createPersenter(): RegisterPersenter =RegisterPersenter()
 
 }
