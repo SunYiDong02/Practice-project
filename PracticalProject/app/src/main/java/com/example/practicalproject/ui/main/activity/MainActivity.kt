@@ -5,6 +5,7 @@ import android.widget.TextView
 import android.widget.Toast
 import com.example.practicalproject.R
 import com.example.practicalproject.base.BaseActivity
+import com.example.practicalproject.http.HttpUtils
 import com.example.practicalproject.ui.main.persenter.MainPersenter
 import com.example.practicalproject.ui.main.view.MainView
 
@@ -14,13 +15,11 @@ class MainActivity : BaseActivity<MainView, MainPersenter>(), MainView {
     override fun getLayoutId(): Int = R.layout.activity_main
 
     override fun initData() {
+        getPersenter()!!.getTest()
     }
 
     override fun init() {
-        tv = findViewById(R.id.tv_test)
-//        tv?.setOnClickListener {
-//            getPersenter()!!.getTest("test")
-//        }
+
     }
 
     override fun createPersenter() = MainPersenter()

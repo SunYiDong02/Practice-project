@@ -5,6 +5,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import com.example.practicalproject.R
+import com.example.practicalproject.http.HttpUtils
 import com.example.practicalproject.mvp.persenter.BasePersenter
 import com.example.practicalproject.mvp.view.BaseView
 
@@ -29,4 +30,5 @@ abstract class BaseActivity<V, P : BasePersenter<V>> : AppCompatActivity(), Base
         super.onDestroy()
         mPersenter!!.unBindView()
     }
+
 }

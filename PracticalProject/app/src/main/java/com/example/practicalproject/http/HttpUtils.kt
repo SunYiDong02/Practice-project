@@ -20,7 +20,9 @@ import java.util.concurrent.TimeUnit
  * @description
  * @author Created by SunYiDong on 2021/7/16 11:43.
  */
- class HttpUtils {
+object HttpUtils {
+
+
     private var mOkhttp: OkHttpClient? = null
     private fun isTest(isTest: Boolean): String = if (isTest) BASE_URL_TEST else BASE_URL
     fun <T> createApi(clazz: Class<T>): T = Retrofit.Builder()
@@ -49,7 +51,7 @@ import java.util.concurrent.TimeUnit
         return HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
     }
 
-     fun <T> sendHttp(ob: Observable<T>, listenter: ResponseListenter<T>) {
+    public fun <T> sendHttp(ob: Observable<T>, listenter: ResponseListenter<T>) {
         ob.subscribeOn(Schedulers.io())
             .subscribeOn(AndroidSchedulers.mainThread())
             .observeOn(AndroidSchedulers.mainThread())
