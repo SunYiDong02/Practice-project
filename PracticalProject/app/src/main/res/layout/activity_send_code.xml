@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main.activity.RegisterActivity">
+    tools:context=".ui.main.activity.SendCodeActivity">
 
     <ImageButton
         android:id="@+id/btn_back"
@@ -26,44 +26,75 @@
         android:layout_marginTop="42dp"
         android:drawableLeft="@drawable/ic_action_back_head"
         android:drawablePadding="5dp"
-        android:text="账号注册"
+        android:text="输入验证码"
         android:textColor="#000000"
-        android:textSize="15sp"
+        android:textSize="18sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_back" />
 
     <LinearLayout
-        android:id="@+id/ll_content"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
-        android:layout_marginTop="23dp"
-        android:layout_marginRight="30dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_title">
 
         <TextView
-            android:id="@+id/tv_86"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableRight="@drawable/ic_action_more"
-            android:text="+86"
-            android:textColor="#222222"
-            android:textSize="15sp"></TextView>
+            android:text="已发送验证码到15920321037"
+            android:textColor="#000000"
+            android:textSize="10dp"></TextView>
 
-        <com.example.practicalproject.view.MoblieEditText
-           android:id="@+id/met_moblie"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:text="修改"
+            android:textColor="#000000"
+            android:textSize="10dp"></TextView>
+
+    </LinearLayout>
+
+
+    <FrameLayout
+        android:id="@+id/ll_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="30dp"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title">
+
+        <EditText
+            android:layout_gravity="start|center_vertical"
+            android:id="@+id/met_moblie"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginRight="50dp"
             android:background="#ffffff"
-            android:hint="手机号"
+            android:hint="3625"
             android:inputType="number"
             android:maxLength="13"
             android:maxLines="1"
             android:paddingLeft="5dp"
             android:paddingTop="15dp"
             android:paddingBottom="15dp" />
-    </LinearLayout>
+
+        <TextView
+            android:textColor="#000000"
+            android:id="@+id/tv_obtain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:text="重新获取"
+            android:textSize="10dp" />
+
+
+    </FrameLayout>
 
     <View
         android:id="@+id/v_line"
@@ -75,28 +106,6 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ll_content" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/v_line">
-
-        <com.example.practicalproject.view.MyCheckBox
-            android:id="@+id/checkbox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="23dp"
-            android:layout_marginTop="12dp"
-            app:layout_constraintLeft_toLeftOf="parent" />
-
-        <!--        <TextView-->
-        <!--            android:layout_marginTop="12dp"-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:drawableRight="@drawable/ic_action_back_head"-->
-        <!--            android:text="@string/agree"-->
-        <!--            android:textColor="#222222"-->
-        <!--            android:textSize="15sp"></TextView>-->
-    </LinearLayout>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cd_next"
