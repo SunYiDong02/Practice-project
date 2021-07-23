@@ -1,15 +1,14 @@
 package com.example.practicalproject.ui.main.activity
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import com.example.practicalproject.R
 import com.example.practicalproject.base.BaseActivity
+import com.example.practicalproject.base.Constants.COUNT_TIME
+import com.example.practicalproject.base.Constants.COUNT_TIME_INTERVAL
 import com.example.practicalproject.ui.main.persenter.RegisterPersenter
 import com.example.practicalproject.ui.main.view.RegisterView
 import com.example.practicalproject.view.AuthCodeTimer
 import com.example.practicalproject.view.CountDownListener
 import kotlinx.android.synthetic.main.activity_send_code.*
-import kotlinx.android.synthetic.main.my_checkbox.view.*
 
 class SendCodeActivity : BaseActivity<RegisterView, RegisterPersenter>(), RegisterView,
     CountDownListener {
@@ -21,7 +20,7 @@ class SendCodeActivity : BaseActivity<RegisterView, RegisterPersenter>(), Regist
     override fun initData() {}
 
     override fun initView() {
-        mAuthCodeTimer = AuthCodeTimer(10000, 1000, this)
+        mAuthCodeTimer = AuthCodeTimer(COUNT_TIME, COUNT_TIME_INTERVAL, this)
         mAuthCodeTimer?.start()
     }
 
