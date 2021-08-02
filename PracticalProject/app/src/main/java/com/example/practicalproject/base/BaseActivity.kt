@@ -1,6 +1,8 @@
 package com.example.practicalproject.base
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
@@ -32,6 +34,17 @@ abstract class BaseActivity<V, P : BasePersenter<V>> : AppCompatActivity(), Base
     override fun onDestroy() {
         super.onDestroy()
         mPersenter!!.unBindView()
+    }
+
+    fun startActivity(clz:Class<*>){
+        startActivity(Intent(this,clz))
+    }
+
+    fun setLightStatusBar(){
+            StatusBarUtils.setStatusBar(this, View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR,R.color.theme)
+    }
+    fun setLightNavigationBar(){
+        StatusBarUtils.setStatusBar(this, View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR,R.color.theme)
     }
 
 }

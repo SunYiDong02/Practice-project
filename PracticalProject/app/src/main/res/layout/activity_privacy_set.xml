@@ -54,7 +54,32 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:isShowImage="true"
-                app:leftTitle="夜间模式" />
+                app:leftTitle="清除缓存" />
+            <com.example.practicalproject.view.SettingItemView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:isShowButton="true"
+                app:leftTitle="字体大小" />
+            <com.example.practicalproject.view.SettingItemView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:isShowImage="true"
+                app:leftTitle="列表显示摘要" />
+            <com.example.practicalproject.view.SettingItemView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:isShowImage="true"
+                app:leftTitle="非WIFI网络流量" />
+            <com.example.practicalproject.view.SettingItemView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:isShowImage="true"
+                app:leftTitle="非WIFI网络播放提醒" />
+            <com.example.practicalproject.view.SettingItemView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:isShowImage="true"
+                app:leftTitle="推送关闭" />
         </LinearLayout>
 
     </ScrollView>

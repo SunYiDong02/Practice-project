@@ -6,6 +6,7 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.FrameLayout
+import androidx.core.content.ContextCompat
 import com.example.practicalproject.R
 import kotlinx.android.synthetic.main.item_setting_view.view.*
 
@@ -55,5 +56,9 @@ class SettingItemView @JvmOverloads constructor(
             view.iv_right_back.visibility = View.GONE
         } else
             view.iv_right_back.visibility = View.VISIBLE
+    }
+
+    fun setBgSetItem(view: View,colorIds:Int){
+        view!!.setBackgroundColor(ContextCompat.getColor(context,colorIds))
     }
 }

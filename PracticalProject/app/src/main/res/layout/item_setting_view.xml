@@ -45,13 +45,18 @@
         android:src="@drawable/ic_action_right" />
 
     <Switch
-        style="@style/btn_off"
         android:id="@+id/btn_off"
+        style="@style/btn_off"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:layout_marginRight="12dp" />
 
-
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/left_title"
+        android:layout_marginTop="20dp"
+        android:background="#110000" />
 </RelativeLayout>

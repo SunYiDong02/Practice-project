@@ -27,7 +27,6 @@ class MainActivity : BaseActivity<MainView, MainPersenter>(), MainView {
     override fun getLayoutId(): Int = R.layout.activity_main
 
 
-
     override fun initView() {
         StatusBarUtils.setStatusBar(this, HOME_BAR, R.color.theme)
         val titles = resources.getStringArray(R.array.title)
@@ -48,6 +47,7 @@ class MainActivity : BaseActivity<MainView, MainPersenter>(), MainView {
         }
 
     }
+
     override fun initData() {
         vp_home.adapter = HomeAdapter(supportFragmentManager, fragments)
         vp_home.offscreenPageLimit = fragments.size
@@ -55,6 +55,10 @@ class MainActivity : BaseActivity<MainView, MainPersenter>(), MainView {
         ctl_home.setOnTabSelectListener(object : OnTabSelectListener {
             override fun onTabSelect(position: Int) {
                 vp_home.setCurrentItem(position, true)
+                when (position) {
+                    0, 1, 2 -> setLightNavigationBar()
+                    3 -> setLightStatusBar()
+                }
             }
 
             override fun onTabReselect(position: Int) {
@@ -62,6 +66,7 @@ class MainActivity : BaseActivity<MainView, MainPersenter>(), MainView {
 
         })
     }
+
     override fun createPersenter() = MainPersenter()
 
     override fun <T> setData(data: T) {
