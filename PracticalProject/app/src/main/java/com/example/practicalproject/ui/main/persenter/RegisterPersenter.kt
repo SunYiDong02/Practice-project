@@ -13,21 +13,21 @@ import com.example.practicalproject.ui.main.view.RegisterView
  * @description
  * @author Created by SunYiDong on 2021/7/19 15:48.
  */
-class RegisterPersenter: BasePersenter<RegisterView>()  {
-    fun getCode(phoneNumber:String){
-        HttpUtils.sendHttp(HttpUtils.createApi(UserApi::class.java).getCode(phoneNumber),object :ResponseListenter<BaseModel<CodeModel>>{
-            override fun onSuccess(data: BaseModel<CodeModel>) {
-            if (data!=null){
-                if (data.code==100){
-                    getBaseView()?.setData(data.data)
+class RegisterPersenter : BasePersenter<RegisterView>() {
+    fun getCode(phoneNumber: String) {
+        HttpUtils.sendHttp(HttpUtils.createApi(UserApi::class.java).getCode(phoneNumber),
+            object : ResponseListenter<BaseModel<CodeModel>> {
+                override fun onSuccess(data: BaseModel<CodeModel>) {
+                    if (data != null) {
+                        if (data.code == 100) {
+                            getBaseView()?.setData(data.data)
+                        }
+                    }
                 }
-            }
-            }
 
-            override fun onFail(err: String) {
-                TODO("Not yet implemented")
-            }
-
-        })
+                override fun onFail(err: String) {
+                    getBaseView()?.setError(err)
+                }
+            })
     }
 }

@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.example.practicalproject.R
+import com.example.practicalproject.ui.main.activity.PrivacySetActivity
 import com.example.practicalproject.ui.main.activity.RegisterActivity
 import kotlinx.android.synthetic.main.fragment_home.*
 
@@ -27,9 +28,9 @@ class HomeFragment : Fragment() {
     }
 
     private fun initView() {
-        tv_jump.setText("test")
+//        tv_jump.setText("test")
         tv_jump.setOnClickListener {
-            var intent = Intent(context, RegisterActivity::class.java)
+            var intent = Intent(context, PrivacySetActivity::class.java)
             startActivity(intent)
         }
     }

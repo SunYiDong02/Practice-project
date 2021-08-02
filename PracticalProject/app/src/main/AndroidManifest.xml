@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PracticalProject.NoActionBar">
-        <activity android:name=".ui.main.activity.SendCodeActivity"></activity>
+        <activity android:name=".ui.main.activity.PrivacySetActivity"></activity>
+        <activity android:name=".ui.main.activity.SendCodeActivity" />
         <activity android:name=".ui.main.activity.RegisterActivity" />
         <activity
             android:name=".base.BaseActivity"

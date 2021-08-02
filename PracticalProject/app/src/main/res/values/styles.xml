@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="btn_off">
+        <item name="android:track">@drawable/ic_action_thumb</item>
+        <item name="android:thumb">@drawable/ic_action_circle</item>
+        <item name="background">@null</item>
+        <item name="android:textOff"></item>
+        <item name="android:textOn"></item>
+        <item name="android:switchMinWidth">50dp</item>
+
+    </style>
+
+
+</resources>

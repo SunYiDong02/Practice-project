@@ -1,7 +1,9 @@
 package com.example.practicalproject.ui.main.activity
 
+import android.text.TextUtils
 import com.example.practicalproject.R
 import com.example.practicalproject.base.BaseActivity
+import com.example.practicalproject.base.Constants
 import com.example.practicalproject.base.Constants.COUNT_TIME
 import com.example.practicalproject.base.Constants.COUNT_TIME_INTERVAL
 import com.example.practicalproject.ui.main.persenter.RegisterPersenter
@@ -14,12 +16,25 @@ class SendCodeActivity : BaseActivity<RegisterView, RegisterPersenter>(), Regist
     CountDownListener {
 
     private var mAuthCodeTimer: AuthCodeTimer? = null
+    private var phone: String? = null
+    private var code: String? = null
+    private var actionTyp = 0
 
     override fun getLayoutId(): Int = R.layout.activity_send_code
 
-    override fun initData() {}
+    override fun initData() {
+
+    }
 
     override fun initView() {
+//        if (intent!=null){
+//            phone=intent.getStringExtra(Constants.MOBLIE)
+//        }
+        btn_back.setOnClickListener { finish() }
+        if (intent !=null){
+            phone=intent.getStringExtra(Constants.MOBLIE)
+            actionTyp=intent.getIntExtra(Constants.USER_ACTION,0)
+        }
         mAuthCodeTimer = AuthCodeTimer(COUNT_TIME, COUNT_TIME_INTERVAL, this)
         mAuthCodeTimer?.start()
     }
@@ -36,13 +51,15 @@ class SendCodeActivity : BaseActivity<RegisterView, RegisterPersenter>(), Regist
 
     override fun countDown(time: Long) {
         val s: String = ("重新获取(${time / 1000})秒")
-        tv_obtain.text = s
-        tv_obtain.isEnabled = false
+        tv_send_code.text = s
+        tv_send_code.isEnabled = false
     }
 
     override fun isOverTime(isOverTime: Boolean) {
-        tv_obtain.text = "重新获取"
-        tv_obtain.isEnabled = true
+        tv_send_code.text = "重新获取"
+        tv_send_code.isEnabled = true
     }
 
 }
+
+

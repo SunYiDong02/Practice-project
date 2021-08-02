@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.example.practicalproject.R
 import com.example.practicalproject.base.BaseActivity
+import com.example.practicalproject.base.Constants.MOBLIE
 import com.example.practicalproject.ui.main.persenter.RegisterPersenter
 import com.example.practicalproject.ui.main.view.RegisterView
 import com.example.practicalproject.utils.NumUtils
@@ -53,7 +54,7 @@ class RegisterActivity : BaseActivity<RegisterView, RegisterPersenter>(), TextWa
                 return@setOnClickListener
             }
             val intent = Intent(this@RegisterActivity, SendCodeActivity::class.java)
-            intent.putExtra("MOBLIE", phoneText)
+            intent.putExtra(MOBLIE, phoneText)
             startActivity(intent)
         }
     }
